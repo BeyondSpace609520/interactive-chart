@@ -1,0 +1,477 @@
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Courgette&amp;family=Lobster&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Courgette&amp;family=Lobster&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
+  <style type="text/css">
+
+  	.wheel-body {
+  font-size: 13px;
+  margin: 50px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.wheel-container svg {
+  height: 630px;
+  width: 630px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.watermark-cnm {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 40px;
+}
+.watermark-coach {
+	font-family: 'Noto Serif', serif;
+	font-size: 40px;
+}
+
+@media only screen and (min-device-width : 220px) and (max-device-width : 550px) {
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative
+}
+        .start-button {width:100%;position:relative;z-index:1000;}
+
+	.watermark-cnm {
+		font-size: 25px;
+	}
+	.watermark-coach {
+		font-size: 25px;
+	}
+.wheel-body{
+margin-left:0;
+margin-right:0;
+}
+
+	.wheel-container-svg{
+   		width:100% !important;
+  	}
+	.wheel-head{
+		font-size:1.3em;
+	}
+  .wheel-container-svg svg{
+		height: 500px !important;
+		margin-top: -60px;
+  }
+
+
+	.wheel-body .text-container{
+  	width:100% !important;
+  }
+	.wheel-container {
+    width: 100% !important;
+    display:block !important;
+	}
+	.wheel-body .head-edge {
+		font-size: 21px !important; 
+	}
+	.wheel-body .start-logo {
+		font-size: 22px !important;
+	}
+}
+
+
+@keyframes segColorChange {
+	0%, 100% {
+		fill: #add141;
+		fill-opacity: 0.6;
+	}
+	50% {
+		fill:#67e063;
+		fill-opacity: 0.3;
+	}
+}
+
+@keyframes startColorChange {
+	0%, 100% {
+		fill: #d62fc8;
+		opacity: 0.7;
+	}
+	50% {
+		fill:#EB2A23;
+		opacity: 1;
+	}
+}
+
+.wheel-body .start-logo {
+	font-family: Sans-Serif;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.wheel-body .fading-segment {
+	animation: segColorChange 0.8s infinite;
+}
+
+.wheel-body .fading-start {
+	animation: startColorChange 0.8s infinite;
+}
+
+.wheel-body .head-edge {
+	font-size: 30px;
+	font-family: 'Baloo Thambi 2', cursive;
+}
+
+.wheel-body .wheel-list {
+	font-size: 16px;
+	margin-left:-34px;
+	padding-left;
+}
+
+
+.wheel-body .wheel-list LI{
+	margin-bottom:26px;
+}
+
+.wheel-body .desc-title {
+	font-size: 28px;
+}
+
+.wheel-body .desc-title .desc-title-cnm {  /* CNM */
+	color: #20AFE3;
+}
+
+.wheel-body .desc-title .desc-title-health {  /* HEALTH */
+	color: #EB2A23;
+}
+
+.wheel-body .desc-title .desc-title-coach {  /* Coach */
+	font-family: 'Courgette'; 
+	color: #EB2A23;
+}
+
+.wheel-body .subtitle {
+	font-family: 'Montserrat', sans-serif;
+ 	font-size: 21px;
+}
+
+.wheel-container {
+	display: inline-flex;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+.wheel-body .text-container {
+	width: 280px;
+	text-align: left;
+}
+
+.wheel-body .wheel-head {
+	font-size: 32px;
+	color: #9998A6;
+	font-family: 'Caveat', cursive;
+}
+
+.seperator {
+	border-color: #EB2A23;	
+}
+
+.subtitle {
+	color: #20AFE3;	
+	font-weight: 700;
+	font-size: 14px;
+}
+
+</style>
+
+
+
+  <script src="chart.js"></script>
+<div class="wheel-body">
+	<div class="wheel-container">
+		<div class="text-container"> 
+					<h2 class="desc-title" style="display:none">
+						<span class="desc-title-cnm">CNM</span>
+						<span class="desc-title-health">Health</span>
+						<span class="desc-title-coach">Coach</span>
+					</h2>
+					<h1 class="wheel-head">Try our interactive wheel of life exercise today</h1>
+					<hr class="seperator">
+					<p class="subtitle">How it works:</p>
+		<ul class="wheel-list">
+		<li>Place a dot in each of the five areas of your life (Yourself, Family, Work, Goals, Environment) to mark how you feel about each one.
+		</li>
+
+		<li>A dot placed nearer the centre of the circle indicates dissatisfaction in that particular part of your life.</li>
+
+		<li>A dot placed towards the outer edge of the circle indicates happiness and feeling fulfilled in that area. </li>
+		</ul>
+		<a onclick="startNewDraw()">Start Again</a>
+	</div>
+
+	<div class="wheel-container-svg">
+	  <svg>
+	  	<defs>
+	  		<linearGradient id="gradient_env_fam">  <!-- Gradient for 10 Lines in Environment and Family -->
+		      <stop offset="20%" stop-color="#f0513c"></stop>
+		      <stop offset="80%" stop-color="#e09187"></stop>
+		    </linearGradient>
+
+	  		<linearGradient id="gradient_your_goal"> <!-- Gradient for 10 Lines in Yourself and Goals -->
+		      <stop offset="10%" stop-color="#3994e3"></stop>
+		      <stop offset="90%" stop-color="#749ec2"></stop>
+		    </linearGradient>
+
+		    <linearGradient id="gradient_work"> <!-- Gradient for 10 Lines in Work -->
+		      <stop offset="20%" stop-color="#5a656e"></stop>
+		      <stop offset="80%" stop-color="#babcbf"></stop>
+		    </linearGradient>
+		  </defs>
+
+		  <g fill="#d3d3d3" font-size="40px"> <!-- Watermark -->
+		  	<text x='140' y='305' transform="rotate(-5,300,300)" id="watermark">
+		  		<tspan class='watermark-cnm'>CNM Health</tspan>
+		  		<tspan class='watermark-coach '>Coach</tspan>
+		  	</text>
+		  </g>
+
+		  <g fill="none"> <!-- Section Title Area -->
+		  	<path id="arc1" stroke="#20AFE3"></path>  <!-- Yourself Heading -->
+			<path id="arc2" stroke="#EB2A23"></path>  <!-- Family Heading -->
+			<path id="arc3" stroke="#9998A6"></path>  <!-- Work Heading -->
+			<path id="arc4" stroke="#20AFE3"></path>  <!-- Goals Heading -->
+			<path id="arc5" stroke="#EB2A23"></path>  <!-- Envrionment Heading -->
+		  </g>
+			
+			<g class="head-edge">
+				<text dy="3">
+			    <textPath fill="white" xlink:href="#arc1" text-anchor="middle" startOffset="50%" dominant-baseline="middle">
+			      YOURSELF
+			    </textPath>
+			  </text>
+			  <text dy="1">
+			    <textPath fill="white" xlink:href="#arc2" text-anchor="middle" startOffset="50%" dominant-baseline="middle">
+			      FAMILY
+			    </textPath>
+			  </text>
+			  <text dy="1">
+			    <textPath fill="white" xlink:href="#arc3" text-anchor="middle" startOffset="50%" dominant-baseline="middle">
+			      WORK
+			    </textPath>
+			  </text>
+			  <text dy="1">
+			    <textPath fill="white" xlink:href="#arc4" text-anchor="middle" startOffset="50%" dominant-baseline="middle">
+			      GOALS
+			    </textPath>
+			  </text>
+			  <text dy="3">
+			    <textPath fill="white" xlink:href="#arc5" text-anchor="middle" startOffset="50%" dominant-baseline="middle">
+			      ENVIRONMENT
+			    </textPath>
+			  </text>
+			</g>
+
+			<path id="arc6" class="fading-segment" fill="transparent" stroke="black" stroke-width="1" stroke-opacity="0.5"></path>
+			<path id="arc7" fill="transparent" stroke="black" stroke-width="1" stroke-opacity="0.5"></path>
+			<path id="arc8" fill="transparent" stroke="black" stroke-width="1" stroke-opacity="0.5"></path>
+			<path id="arc9" fill="transparent" stroke="black" stroke-width="1" stroke-opacity="0.5"></path>
+			<path id="arc10" fill="transparent" stroke="black" stroke-width="1" stroke-opacity="0.5"></path>
+
+			<g fill="none" stroke="url(#gradient_env_fam)">
+				<path id="env_10"></path>
+				<path id="env_9"></path>
+				<path id="env_8"></path>
+				<path id="env_7"></path>
+				<path id="env_6"></path>
+				<path id="env_5"></path>
+				<path id="env_4"></path>
+				<path id="env_3"></path>
+				<path id="env_2"></path>
+				<path id="env_1"></path>
+			</g>
+
+			<g fill="none" stroke="url(#gradient_your_goal)" stroke-width="2">
+				<path id="your_10"></path>
+				<path id="your_9"></path>
+				<path id="your_8"></path>
+				<path id="your_7"></path>
+				<path id="your_6"></path>
+				<path id="your_5"></path>
+				<path id="your_4"></path>
+				<path id="your_3"></path>
+				<path id="your_2"></path>
+				<path id="your_1"></path>
+			</g>
+
+			<g fill="none" stroke="url(#gradient_work)" stroke-width="2">
+				<path id="work_10"></path>
+				<path id="work_9"></path>
+				<path id="work_8"></path>
+				<path id="work_7"></path>
+				<path id="work_6"></path>
+				<path id="work_5"></path>
+				<path id="work_4"></path>
+				<path id="work_3"></path>
+				<path id="work_2"></path>
+				<path id="work_1"></path>
+			</g>
+
+			<g fill="none" stroke="url(#gradient_env_fam)" stroke-width="2">
+				<path id="family_10"></path>
+				<path id="family_9"></path>
+				<path id="family_8"></path>
+				<path id="family_7"></path>
+				<path id="family_6"></path>
+				<path id="family_5"></path>
+				<path id="family_4"></path>
+				<path id="family_3"></path>
+				<path id="family_2"></path>
+				<path id="family_1"></path>
+			</g>
+
+			<g fill="none" stroke="url(#gradient_your_goal)" stroke-width="2">
+				<path id="goals_10"></path>
+				<path id="goals_9"></path>
+				<path id="goals_8"></path>
+				<path id="goals_7"></path>
+				<path id="goals_6"></path>
+				<path id="goals_5"></path>
+				<path id="goals_4"></path>
+				<path id="goals_3"></path>
+				<path id="goals_2"></path>
+				<path id="goals_1"></path>
+			</g>
+
+			<g fill-opacity="0.4">
+				<path id="last_region_1" fill="#20AFE3"></path>
+				<path id="last_region_2" fill="#EB2A23"></path>
+				<path id="last_region_3" fill="#9998A6"></path>
+				<path id="last_region_4" fill="#20AFE3"></path>
+				<path id="last_region_5" fill="#EB2A23"></path>
+			</g>
+
+			<g fill-opacity="0.5">
+				<circle id="dot_1_1" r="2"></circle>
+				<circle id="dot_1_5" r="2"></circle>
+				<circle id="dot_1_10" r="2"></circle>
+
+				<circle id="dot_2_1" r="2"></circle>
+				<circle id="dot_2_5" r="2"></circle>
+				<circle id="dot_2_10" r="2"></circle>
+
+				<circle id="dot_3_1" r="2"></circle>
+				<circle id="dot_3_5" r="2"></circle>
+				<circle id="dot_3_10" r="2"></circle>
+
+				<circle id="dot_4_1" r="2"></circle>
+				<circle id="dot_4_5" r="2"></circle>
+				<circle id="dot_4_10" r="2"></circle>
+
+				<circle id="dot_5_1" r="2"></circle>
+				<circle id="dot_5_5" r="2"></circle>
+				<circle id="dot_5_10" r="2"></circle>
+			</g>
+
+			<g font-size="14px" font-weight="bold">
+				<text id="label_1_1"></text>
+				<text id="label_1_5"></text>
+				<text id="label_1_10"></text>
+
+		    <text id="label_2_1"></text>
+				<text id="label_2_5"></text>
+				<text id="label_2_10"></text>
+
+				<text id="label_3_1"></text>
+				<text id="label_3_5"></text>
+				<text id="label_3_10"></text>
+
+				<text id="label_4_1"></text>
+				<text id="label_4_5"></text>
+				<text id="label_4_10"></text>
+
+				<text id="label_5_1"></text>
+				<text id="label_5_5"></text>
+				<text id="label_5_10"></text>
+			</g>
+
+			<path id="chart" stroke="blue" stroke-width="3" fill="#67e063" fill-opacity="0.5"></path>
+
+			<!-- Fake -->
+			<text id="start" class="start-logo fading-start" fill="#349e92">START</text>
+			
+			<g fill="transparent" stroke="transparent" stroke-width="0">
+				<path id="your_fake_10"></path>
+				<path id="your_fake_9"></path>
+				<path id="your_fake_8"></path>
+				<path id="your_fake_7"></path>
+				<path id="your_fake_6"></path>
+				<path id="your_fake_5"></path>
+				<path id="your_fake_4"></path>
+				<path id="your_fake_3"></path>
+				<path id="your_fake_2"></path>
+				<path id="your_fake_1"></path>
+			</g>
+
+			<g fill="transparent" stroke="transparent" stroke-width="0">
+				<path id="env_fake_10"></path>
+				<path id="env_fake_9"></path>
+				<path id="env_fake_8"></path>
+				<path id="env_fake_7"></path>
+				<path id="env_fake_6"></path>
+				<path id="env_fake_5"></path>
+				<path id="env_fake_4"></path>
+				<path id="env_fake_3"></path>
+				<path id="env_fake_2"></path>
+				<path id="env_fake_1"></path>
+			</g>
+
+			<g fill="transparent" stroke="transparent" stroke-width="0">
+				<path id="work_fake_10"></path>
+				<path id="work_fake_9"></path>
+				<path id="work_fake_8"></path>
+				<path id="work_fake_7"></path>
+				<path id="work_fake_6"></path>
+				<path id="work_fake_5"></path>
+				<path id="work_fake_4"></path>
+				<path id="work_fake_3"></path>
+				<path id="work_fake_2"></path>
+				<path id="work_fake_1"></path>
+			</g>
+
+			<g fill="transparent" stroke="transparent" stroke-width="0">
+				<path id="family_fake_10"></path>
+				<path id="family_fake_9"></path>
+				<path id="family_fake_8"></path>
+				<path id="family_fake_7"></path>
+				<path id="family_fake_6"></path>
+				<path id="family_fake_5"></path>
+				<path id="family_fake_4"></path>
+				<path id="family_fake_3"></path>
+				<path id="family_fake_2"></path>
+				<path id="family_fake_1"></path>
+			</g>
+
+			<g fill="transparent" stroke="transparent" stroke-width="0">
+				<path id="goals_fake_10"></path>
+				<path id="goals_fake_9"></path>
+				<path id="goals_fake_8"></path>
+				<path id="goals_fake_7"></path>
+				<path id="goals_fake_6"></path>
+				<path id="goals_fake_5"></path>
+				<path id="goals_fake_4"></path>
+				<path id="goals_fake_3"></path>
+				<path id="goals_fake_2"></path>
+				<path id="goals_fake_1"></path>
+			</g>
+			
+			<g fill="blue"> <!-- Marked Point -->
+				<circle id="circle1" cx="300" cy="300" r="4" stroke="white" stroke-width="2"></circle>
+				<circle id="circle2" cx="300" cy="300" r="4" stroke="white" stroke-width="2"></circle>
+				<circle id="circle3" cx="300" cy="300" r="4" stroke="white" stroke-width="2"></circle>
+				<circle id="circle4" cx="300" cy="300" r="4" stroke="white" stroke-width="2"></circle>
+				<circle id="circle5" cx="300" cy="300" r="4" stroke="white" stroke-width="2"></circle>
+			</g>
+
+			
+	  </svg>
+	</div>
+	</div>
+	</div>
+</div>
